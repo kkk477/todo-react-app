@@ -10,7 +10,7 @@ import {
 import DeleteOutlined from "@mui/icons-material/DeleteOutlined";
 
 const Todo = (props) => {
-    const [item, setItems] = useState(props.item);
+    const [item, setItem] = useState(props.item);
     const [readOnly, setReadOnly] = useState(true);
     const deleteItem = props.deleteItem;
     const editItem = props.editItem;
@@ -25,6 +25,7 @@ const Todo = (props) => {
         editItem();
     };
 
+    // deleteEventHandler 작성
     const deleteEventHandler = () => {
         deleteItem(item);
     };
@@ -48,8 +49,7 @@ const Todo = (props) => {
                 <InputBase
                     inputProps={{
                         "aria-label": "naked",
-                        readOnly: readOnly
-                    }}
+                        readOnly: readOnly }}
                     onClick={turnOffReadOnly}
                     onKeyDown={turnOnReadOnly}
                     onChange={editEventHandler}
